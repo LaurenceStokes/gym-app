@@ -5,7 +5,13 @@ import Exercises from './components/exercises';
     class App extends Component {
 
       state = {
-        exercisesList: []
+        exercisesList: [],
+        exercisesListFiltered: []
+      }
+
+      filterExercises = (bodyArea) => {
+        const filtered = this.state.exercisesList.filter((exercise) => exercise.bodyAreas.includes(bodyArea));
+        this.setState({ exercisesListFiltered: filtered })
       }
 
       componentDidMount() {
@@ -13,7 +19,6 @@ import Exercises from './components/exercises';
           .then(res => res.json())
           .then((data) => {
             this.setState({ exercisesList: data.exercises })
-            console.log(getBodyAreasList(data.exercises));
           })
         .catch(console.log)
       }
@@ -23,8 +28,8 @@ import Exercises from './components/exercises';
           <div>
             <center><h1>Exercises List</h1></center>
             <hr></hr>
-            <center><h4 className="">{getBodyAreasList(this.state.exercisesList).map((area, index) => <span key={index}>{area} </span>)}</h4></center>
-            <Exercises exercisesList={this.state.exercisesList} />
+            <center><h4 className="">{getBodyAreasList(this.state.exercisesList).map((bodyArea, index) => <span key={index} onClick={ () => this.filterExercises(bodyArea) }>{bodyArea} </span>)}</h4></center>
+            <Exercises exercisesList={this.state.exercisesListFiltered} />
           </div>
         )
       }
