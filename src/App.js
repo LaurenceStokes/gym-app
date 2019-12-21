@@ -1,12 +1,18 @@
 
-    import React, { Component } from 'react';
+import React, { Component } from 'react';
+import Exercises from './components/exercises';
 
     class App extends Component {
+
+      state = {
+        exercisesList: []
+      }
 
       componentDidMount() {
         fetch('https://private-922d75-recruitmenttechnicaltest.apiary-mock.com/customexercises/')
           .then(res => res.json())
           .then((data) => {
+            this.setState({ exercisesList: data.exercises })
             console.log(getBodyAreasList(data.exercises));
           })
         .catch(console.log)
@@ -14,16 +20,13 @@
 
       render() {
         return (
-          <div className="card">
-            <div className="card-body">
-              <h5 className="card-title">Pull up</h5>
-              <h6 className="card-subtitle mb-2 text-muted">Back, Biceps</h6>
-              <p className="card-text">
-              </p>
-              <img src="https://cdni.gs.lightning-e.com/media/5c0e516f72fc52b810eb7f57-malewidegrippullupthumbnail.jpg" alt="pull-up" style={{width: 200, height: 200}}></img>
-            </div>
+          <div>
+            <center><h1>Exercises List</h1></center>
+            <hr></hr>
+            <center><h4 className="">{getBodyAreasList(this.state.exercisesList).map((area, index) => <span key={index}>{area} </span>)}</h4></center>
+            <Exercises exercisesList={this.state.exercisesList} />
           </div>
-        );
+        )
       }
   }
 
