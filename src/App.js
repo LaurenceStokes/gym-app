@@ -36,16 +36,35 @@ class App extends Component {
     }
 
     render() {
+      const dataLoaded = this.state.exercisesList.length;
+      let display;
+
+      if(dataLoaded) {
+        display = (<div>
+              <center><h1>Exercises List</h1></center>
+              <hr></hr>
+                <center>
+                  <h4>
+                    | {this.getBodyAreasList(this.state.exercisesList).map((bodyArea, index) => <BodyAreaList bodyArea={bodyArea} active={this.state.activeBodyArea === bodyArea} filterExercises={this.filterExercises} setActiveBodyArea={this.setActiveBodyArea} key={index}/>)}
+                  </h4>
+                </center>
+              <Exercises exercisesList={this.state.exercisesListFiltered} activeArea={this.state.activeBodyArea} />
+          </div>)
+      } else {
+        display = (<div>
+              <center><h1>Exercises List</h1></center>
+              <hr></hr>
+              <center>
+                <h4>
+                  ... Please wait while the exercise list is populated!
+                </h4>
+              </center>
+          </div>)
+      }
+
       return (
         <div>
-          <center><h1>Exercises List</h1></center>
-          <hr></hr>
-          <center>
-            <h4>
-              | {this.getBodyAreasList(this.state.exercisesList).map((bodyArea, index) => <BodyAreaList bodyArea={bodyArea} active={this.state.activeBodyArea === bodyArea} filterExercises={this.filterExercises} setActiveBodyArea={this.setActiveBodyArea} key={index}/>)}
-            </h4>
-          </center>
-          <Exercises exercisesList={this.state.exercisesListFiltered} />
+          {display}
         </div>
       )
     }
