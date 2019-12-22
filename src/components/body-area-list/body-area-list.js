@@ -14,7 +14,6 @@ const BodyAreaList = props => {
       }}
     >
       {props.bodyArea}
-      <span className={styles.seperator}> | </span>
     </span>
   );
 };

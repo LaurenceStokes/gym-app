@@ -1,11 +1,9 @@
 .active {
-  color: red;
-}
-
-.seperator {
-  color: black;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 .bodyAreaItem {
   cursor: pointer;
+  padding: 5px;
 }
