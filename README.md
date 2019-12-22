@@ -1,14 +1,21 @@
 # Gym App
 
-A simple React app that queries an API and displays a list of exercises.
+A simple React app that queries an API and displays a list of exercises. <br />
+This is the first project I've done in React, and my first 'proper' exposure to react beyond small tutorials/'what is React' type things. <br />
+I used a variety of learning resources including Stack Overflow (naturally!), the official docs, and a course on [Ultimate courses](https://ultimatecourses.com/). <br />
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-Demo on AWS Amplify - [LIVE DEMO](https://master.d2yxugw2wrc01u.amplifyapp.com/).
+Demo on AWS Amplify with CD Pipeline from Master Branch - [LIVE DEMO](https://master.d2yxugw2wrc01u.amplifyapp.com/).
+
+## TODO
+
+* (More) Unit tests (especially for each component)
+* Continue learning React (I'm genuinely really impressed with it)
 
 ## Launching the project locally
 
-Clone the project - `git clone https://github.com/LaurenceStokes/gym-app.git $destinationName`
+Clone the project - `git clone https://github.com/LaurenceStokes/gym-app.git $destinationName` <br />
 Cd into the project directory and run:
 
 ### `npm i`
@@ -23,16 +30,3 @@ Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-## Making a 'prod' build
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
