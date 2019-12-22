@@ -59,7 +59,7 @@ class App extends Component {
           </center>
           <hr />
           <center>
-            <h4 style={{marginTop: 40}}>
+            <h4 style={{ marginTop: 40 }}>
               {this.getBodyAreasList(this.state.exercisesList).map(
                 (bodyArea, index) => (
                   <BodyAreaList
@@ -86,13 +86,19 @@ class App extends Component {
           </center>
           <hr />
           <center>
-            <h4 style={{marginTop: 40, 'padding-bottom': '100vh'}}>... Please wait while the exercise list is populated!</h4>
+            <h4 style={{ marginTop: 40, 'padding-bottom': '100vh' }}>
+              ... Please wait while the exercise list is populated!
+            </h4>
           </center>
         </>
       );
     }
 
-    return <div style={{maxWidth: 1200, backgroundColor: "#FFF", 'margin': 'auto'}}>{display}</div>;
+    return (
+      <div style={{ maxWidth: 1200, backgroundColor: '#FFF', margin: 'auto' }}>
+        {display}
+      </div>
+    );
   }
 }
 

@@ -5,16 +5,16 @@ import styles from './body-area-list.module.css';
 
 const BodyAreaList = props => {
   return (
-      <span
-        className={cx(styles.bodyAreaItem, {
-          [styles.active]: props.active
-        })}
-        onClick={() => {
-          props.bodyAreaOnClickHandler(props.bodyArea);
-        }}
-      >
-        {props.bodyArea}
-      </span>
+    <span
+      className={cx(styles.bodyAreaItem, {
+        [styles.active]: props.active
+      })}
+      onClick={() => {
+        props.bodyAreaOnClickHandler(props.bodyArea);
+      }}
+    >
+      {props.bodyArea}
+    </span>
   );
 };
 
