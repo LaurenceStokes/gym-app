@@ -86,7 +86,7 @@ class App extends Component {
           </center>
           <hr />
           <center>
-            <h4 style={{ marginTop: 40, 'padding-bottom': '100vh' }}>
+            <h4 style={{ marginTop: 40, paddingBottom: '100vh' }}>
               ... Please wait while the exercise list is populated!
             </h4>
           </center>
