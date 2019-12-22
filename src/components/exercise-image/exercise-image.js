@@ -15,11 +15,11 @@ const ExerciseImage = props => {
               : props.exercise.female.image
           }
           alt={props.exercise.name + '-' + activeSex}
-          style={{ width: '100%', maxWidth: 200 }}
+          style={{ width: '100%', maxWidth: 300 }}
         />
       </div>
       <div
-        style={{ width: '100%', maxWidth: 200, maxHeight: 45, marginTop: 20 }}
+        style={{ width: '100%', maxWidth: 300, maxHeight: 45, marginTop: 20 }}
       >
         <center>
           <img
