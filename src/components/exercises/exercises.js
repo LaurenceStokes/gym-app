@@ -36,10 +36,10 @@ const Exercises = props => {
             <Card.Body>
               <div className="container" style={{ marginTop: 40 }}>
                 <div className="row">
-                  <div className="col-4">
+                  <div className="col-12 col-md-4" style={{ marginBottom: 20 }}>
                     <ExerciseImage exercise={exercise} />
                   </div>
-                  <div className="col-8">
+                  <div className="col-12 col-md-8">
                     <span
                       dangerouslySetInnerHTML={{
                         __html: exercise.transcript || ''

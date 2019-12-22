@@ -15,12 +15,10 @@ const ExerciseImage = props => {
               : props.exercise.female.image
           }
           alt={props.exercise.name + '-' + activeSex}
-          style={{ width: '100%', maxWidth: 300 }}
+          style={{ width: '100%' }}
         />
       </div>
-      <div
-        style={{ width: '100%', maxWidth: 300, maxHeight: 45, marginTop: 20 }}
-      >
+      <div style={{ width: '100%', maxHeight: 45, marginTop: 20 }}>
         <center>
           <img
             src="https://image.flaticon.com/icons/png/512/32/32551.png"
