@@ -5,7 +5,7 @@ import styles from './exercise-image.module.css';
 const ExerciseImage = props => {
   const [activeSex, setActiveSex] = useState('female');
   return (
-    <div>
+    <>
       <div>
         <img
           src={activeSex === 'male' ? props.exercise.male.image : props.exercise.female.image}
@@ -29,7 +29,7 @@ const ExerciseImage = props => {
           />
         </center>
       </div>
-    </div>
+    </>
   )
 }
 

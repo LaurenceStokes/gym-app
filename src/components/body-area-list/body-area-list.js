@@ -8,8 +8,8 @@ const BodyAreaList = props => {
       onClick={() => {
         props.bodyAreaOnClickHandler(props.bodyArea);
       }}>
-        {props.bodyArea}
-      <span className={styles.seperator}>|</span>
+         {props.bodyArea}
+      <span className={styles.seperator}> | </span>
     </span>
   )
 }
