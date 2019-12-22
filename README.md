@@ -14,6 +14,7 @@ Demo on AWS Amplify with CD Pipeline from Master Branch - [LIVE DEMO](https://ma
 
 - (More) Unit tests (especially for each component)
 - Continue learning React (I'm genuinely really impressed with it)
+- Accessibility stuff (tab indexes for buttons, aria labels - general good practice for web development to help all web users);
 
 ## Launching the project locally
 
