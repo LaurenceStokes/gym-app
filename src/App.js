@@ -59,7 +59,7 @@ class App extends Component {
           </center>
           <hr />
           <center>
-            <h4>
+            <h4 style={{marginTop: 40}}>
               |{' '}
               {this.getBodyAreasList(this.state.exercisesList).map(
                 (bodyArea, index) => (
@@ -87,7 +87,7 @@ class App extends Component {
           </center>
           <hr />
           <center>
-            <h4>... Please wait while the exercise list is populated!</h4>
+            <h4 style={{marginTop: 40}}>... Please wait while the exercise list is populated!</h4>
           </center>
         </>
       );
