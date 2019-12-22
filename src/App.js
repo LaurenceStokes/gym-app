@@ -1,7 +1,7 @@
 
 import React, { Component } from 'react';
-import Exercises from './components/exercises';
-import BodyAreaList from './components/body-area-list';
+import Exercises from './components/exercises/exercises';
+import BodyAreaList from './components/body-area-list/body-area-list';
 
 class App extends Component {
 

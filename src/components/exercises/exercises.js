@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styles from './exercises.module.css'
-import ExerciseImage from './exercise-image';
+import ExerciseImage from '../exercise-image/exercise-image';
 
 class Exercises extends Component  {
 
