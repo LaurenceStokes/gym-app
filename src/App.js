@@ -20,6 +20,11 @@ class App extends Component {
       this.setState({activeBodyArea: bodyArea});
     }
 
+    bodyAreaOnClickHandler = (bodyArea) => {
+      this.filterExercises(bodyArea);
+      this.setActiveBodyArea(bodyArea);
+    }
+
     // Gets the 'bodyArea' property from the exercises array, then flattens the result before stripping duplicates
     getBodyAreasList = (exercisesList) => {
       const bodyAreasList = exercisesList.map(exercise => exercise.bodyAreas).flat();
@@ -40,18 +45,18 @@ class App extends Component {
       let display;
 
       if(dataLoaded) {
-        display = (<div>
+        display = (<>
               <center><h1>Exercises List</h1></center>
               <hr></hr>
                 <center>
                   <h4>
-                    | {this.getBodyAreasList(this.state.exercisesList).map((bodyArea, index) => <BodyAreaList bodyArea={bodyArea} active={this.state.activeBodyArea === bodyArea} filterExercises={this.filterExercises} setActiveBodyArea={this.setActiveBodyArea} key={index}/>)}
+                    | {this.getBodyAreasList(this.state.exercisesList).map((bodyArea, index) => <BodyAreaList bodyArea={bodyArea} active={this.state.activeBodyArea === bodyArea} bodyAreaOnClickHandler={this.bodyAreaOnClickHandler} key={index}/>)}
                   </h4>
                 </center>
               <Exercises exercisesList={this.state.exercisesListFiltered} activeArea={this.state.activeBodyArea} />
-          </div>)
+          </>)
       } else {
-        display = (<div>
+        display = (<>
               <center><h1>Exercises List</h1></center>
               <hr></hr>
               <center>
@@ -59,7 +64,7 @@ class App extends Component {
                   ... Please wait while the exercise list is populated!
                 </h4>
               </center>
-          </div>)
+          </>)
       }
 
       return (
