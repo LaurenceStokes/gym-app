@@ -12,8 +12,8 @@ Demo on AWS Amplify with CD Pipeline from Master Branch - [LIVE DEMO](https://ma
 
 ## TODO
 
-* (More) Unit tests (especially for each component)
-* Continue learning React (I'm genuinely really impressed with it)
+- (More) Unit tests (especially for each component)
+- Continue learning React (I'm genuinely really impressed with it)
 
 ## Launching the project locally
 
