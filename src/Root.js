@@ -14,6 +14,6 @@ const Root = () => {
       </ErrorBoundary>
     </div>
   );
-}
+};
 
 export default Root;
