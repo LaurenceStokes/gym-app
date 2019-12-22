@@ -1,55 +1,55 @@
-import React, { Component } from "react";
-import Exercises from "./components/exercises/exercises";
-import BodyAreaList from "./components/body-area-list/body-area-list";
+import React, { Component } from 'react'
+import Exercises from './components/exercises/exercises'
+import BodyAreaList from './components/body-area-list/body-area-list'
 
 class App extends Component {
   state = {
     exercisesList: [],
     exercisesListFiltered: [],
-    activeBodyArea: "Back"
+    activeBodyArea: 'Back'
   };
 
   filterExercises = bodyArea => {
     const filtered = this.state.exercisesList.filter(exercise =>
       exercise.bodyAreas.includes(bodyArea)
-    );
-    this.setState({ exercisesListFiltered: filtered });
+    )
+    this.setState({ exercisesListFiltered: filtered })
   };
 
   setActiveBodyArea = bodyArea => {
-    this.setState({ activeBodyArea: bodyArea });
+    this.setState({ activeBodyArea: bodyArea })
   };
 
   bodyAreaOnClickHandler = bodyArea => {
-    this.filterExercises(bodyArea);
-    this.setActiveBodyArea(bodyArea);
+    this.filterExercises(bodyArea)
+    this.setActiveBodyArea(bodyArea)
   };
 
   // Gets the 'bodyArea' property from the exercises array, then flattens the result before stripping duplicates
   getBodyAreasList = exercisesList => {
     const bodyAreasList = exercisesList
       .map(exercise => exercise.bodyAreas)
-      .flat();
+      .flat()
     return bodyAreasList.filter(
       (bodyArea, index) => bodyAreasList.indexOf(bodyArea) === index
-    );
+    )
   };
 
-  componentDidMount() {
+  componentDidMount () {
     fetch(
-      "https://private-922d75-recruitmenttechnicaltest.apiary-mock.com/customexercises/"
+      'https://private-922d75-recruitmenttechnicaltest.apiary-mock.com/customexercises/'
     )
       .then(res => res.json())
       .then(data => {
-        this.setState({ exercisesList: data.exercises });
-        this.bodyAreaOnClickHandler(this.state.activeBodyArea);
+        this.setState({ exercisesList: data.exercises })
+        this.bodyAreaOnClickHandler(this.state.activeBodyArea)
       })
-      .catch(console.log);
+      .catch(console.log)
   }
 
-  render() {
-    const dataLoaded = this.state.exercisesList.length;
-    let display;
+  render () {
+    const dataLoaded = this.state.exercisesList.length
+    let display
 
     if (dataLoaded) {
       display = (
@@ -57,10 +57,10 @@ class App extends Component {
           <center>
             <h1>Exercises List</h1>
           </center>
-          <hr></hr>
+          <hr />
           <center>
             <h4>
-              |{" "}
+              |{' '}
               {this.getBodyAreasList(this.state.exercisesList).map(
                 (bodyArea, index) => (
                   <BodyAreaList
@@ -78,23 +78,23 @@ class App extends Component {
             activeArea={this.state.activeBodyArea}
           />
         </>
-      );
+      )
     } else {
       display = (
         <>
           <center>
             <h1>Exercises List</h1>
           </center>
-          <hr></hr>
+          <hr />
           <center>
             <h4>... Please wait while the exercise list is populated!</h4>
           </center>
         </>
-      );
+      )
     }
 
-    return <div>{display}</div>;
+    return <div>{display}</div>
   }
 }
 
-export default App;
+export default App
