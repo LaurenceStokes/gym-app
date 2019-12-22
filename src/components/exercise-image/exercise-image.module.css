@@ -1,5 +1,6 @@
 .activeSex {
   border: 1px solid #007bff;
+  border-radius: 3px;
   transform: scale(1.2);
 }
 
