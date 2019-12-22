@@ -12,6 +12,7 @@ Clone the project - `git clone https://github.com/LaurenceStokes/gym-app.git $de
 Cd into the project directory and run:
 
 ### `npm i`
+
 ### `npm start`
 
 This runs the app in the development mode.<br />

@@ -1,19 +1,20 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styles from './body-area-list.module.css'
+import React from "react";
+import PropTypes from "prop-types";
+import styles from "./body-area-list.module.css";
 
 const BodyAreaList = props => {
   return (
     <span
-      className={props.active ? styles.active: null}
+      className={props.active ? styles.active : null}
       onClick={() => {
         props.bodyAreaOnClickHandler(props.bodyArea);
-      }}>
-         {props.bodyArea}
+      }}
+    >
+      {props.bodyArea}
       <span className={styles.seperator}> | </span>
     </span>
-  )
-}
+  );
+};
 
 BodyAreaList.propTypes = {
   active: PropTypes.bool,
@@ -21,7 +22,7 @@ BodyAreaList.propTypes = {
 };
 
 BodyAreaList.defaultProps = {
-  active: false,
+  active: false
 };
 
-export default BodyAreaList
+export default BodyAreaList;
