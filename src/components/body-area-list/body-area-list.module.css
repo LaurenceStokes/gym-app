@@ -5,3 +5,7 @@
 .seperator {
   color: black;
 }
+
+.bodyAreaItem {
+  cursor: pointer;
+}
