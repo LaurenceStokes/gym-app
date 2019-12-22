@@ -8,7 +8,7 @@ class App extends Component {
     state = {
       exercisesList: [],
       exercisesListFiltered: [],
-      activeBodyArea: ''
+      activeBodyArea: 'Back'
     }
 
     filterExercises = (bodyArea) => {
@@ -35,7 +35,8 @@ class App extends Component {
       fetch('https://private-922d75-recruitmenttechnicaltest.apiary-mock.com/customexercises/')
         .then(res => res.json())
         .then((data) => {
-          this.setState({ exercisesList: data.exercises })
+          this.setState({ exercisesList: data.exercises });
+          this.bodyAreaOnClickHandler(this.state.activeBodyArea);
         })
       .catch(console.log)
     }
