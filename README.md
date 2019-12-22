@@ -4,7 +4,7 @@ A simple React app that queries an API and displays a list of exercises.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-[LIVE DEMO](http://www.lozstokes.co.uk).
+Demo on AWS Amplify - [LIVE DEMO](https://master.d2yxugw2wrc01u.amplifyapp.com/).
 
 ## Launching the project locally
 
