@@ -44,7 +44,7 @@ class App extends Component {
         this.setState({ exercisesList: data.exercises });
         this.bodyAreaOnClickHandler(this.state.activeBodyArea);
       })
-      .catch(console.log);
+      .catch();
   }
 
   render() {
@@ -54,10 +54,6 @@ class App extends Component {
     if (dataLoaded) {
       display = (
         <>
-          <center>
-            <h1>Exercises List</h1>
-          </center>
-          <hr />
           <center>
             <h4 style={{ marginTop: 40 }}>
               {this.getBodyAreasList(this.state.exercisesList).map(
@@ -82,10 +78,6 @@ class App extends Component {
       display = (
         <>
           <center>
-            <h1>Exercises List</h1>
-          </center>
-          <hr />
-          <center>
             <h4 style={{ marginTop: 40, paddingBottom: '100vh' }}>
               ... Please wait while the exercise list is populated!
             </h4>
@@ -94,11 +86,7 @@ class App extends Component {
       );
     }
 
-    return (
-      <div style={{ maxWidth: 1200, backgroundColor: '#FFF', margin: 'auto' }}>
-        {display}
-      </div>
-    );
+    return <>{display}</>;
   }
 }
 
