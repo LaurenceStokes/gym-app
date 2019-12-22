@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './body-area-list.module.css'
 
 const BodyAreaList = props => {
@@ -13,5 +14,14 @@ const BodyAreaList = props => {
     </span>
   )
 }
+
+BodyAreaList.propTypes = {
+  active: PropTypes.bool,
+  bodyAreaOnClickHandler: PropTypes.func.isRequired
+};
+
+BodyAreaList.defaultProps = {
+  active: false,
+};
 
 export default BodyAreaList

@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 import cx from 'classnames';
 import styles from './exercise-image.module.css';
 
@@ -32,5 +33,23 @@ const ExerciseImage = props => {
     </>
   )
 }
+
+ExerciseImage.propTypes = {
+  exercise:PropTypes.shape({
+     id: PropTypes.string.isRequired,
+     name: PropTypes.string.isRequired,
+     female:PropTypes.shape({
+       image:PropTypes.string.isRequired
+     }).isRequired,
+     male:PropTypes.shape({
+       image: PropTypes.string.isRequired
+     }).isRequired,
+     bodyAreas: PropTypes.arrayOf(PropTypes.string)
+  }),
+};
+
+ExerciseImage.defaultProps = {
+  exercise: PropTypes.shape({}),
+};
 
 export default ExerciseImage

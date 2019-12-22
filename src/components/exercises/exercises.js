@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import styles from './exercises.module.css'
 import ExerciseImage from '../exercise-image/exercise-image';
 import { Card, Accordion, Button } from 'react-bootstrap';
@@ -37,5 +38,24 @@ const Exercises = props => {
   )
 }
 
-// TODO Define proptypes and default props for everything - this and other classes.
+Exercises.propTypes = {
+  exercisesList: PropTypes.arrayOf(PropTypes.shape({
+     id: PropTypes.string.isRequired,
+     name: PropTypes.string.isRequired,
+     female:PropTypes.shape({
+       image:PropTypes.string.isRequired
+     }).isRequired,
+     male:PropTypes.shape({
+       image: PropTypes.string.isRequired
+     }).isRequired,
+     bodyAreas: PropTypes.arrayOf(PropTypes.string)
+  })).isRequired,
+  activeArea: PropTypes.string
+};
+
+Exercises.defaultProps = {
+  exercisesList: PropTypes.shape({}),
+  activeArea: 'Back'
+};
+
 export default Exercises;
