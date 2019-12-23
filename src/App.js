@@ -101,7 +101,7 @@ class App extends Component {
   getBodyAreasList = exercisesList => {
     const bodyAreasList = exercisesList
       .map(exercise => exercise.bodyAreas)
-      .flat();
+      .reduce((acc, val) => acc.concat(val), []);
     return bodyAreasList.filter(
       (bodyArea, index) => bodyAreasList.indexOf(bodyArea) === index
     );
